@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if articles and articles|length > 0 %}
+{% for article in articles %}
+
+<div class="item">
+  <div class="item-title"><a href="/blog/{{article.key.id()}}">{{article.subject}}</a></div>
+  <div class="item-details">
+    <div class="item-author">
+      <a href="/blog/{{article.author.username}}">{{article.author.username}}</a> posted this on {{article.created.strftime('%-d %B, %Y %I:%M%p')}}
+    </div>
+    <div class="item-like-count">{{article.numlikes}} likes</div>
+    <div class="item-comment-count">{{article.numcomments}} comments</div>
+  </div>
+  <div class="item-body">
+    {{article.tidy_content() | safe}}    
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<p>No articles found.</p>
+{% endif %}
+
+
+
+{% endblock %}

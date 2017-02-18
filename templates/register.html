@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="pagetitle">
+  <h1>Register for an account</h1>
+</div>
+
+<div class="registerform">
+  <form class="bootstrap-frm" action="/register" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="{{username}}"> <span class="errortext">{{u_error}}</span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password"> <span class="errortext">{{p_error}}</span><br>
+
+    <label for="verify">Verify Password:</label>
+    <input type="password" name="verify"> <span class="errortext">{{v_error}}</span><br>
+
+    <label for="email">Email (optional):</label>
+    <input type="email" name="email" value="{{email}}"> <span class="errortext">{{e_error}}</span><br>
+
+    <input type="submit" value="Register">
+
+  </form>
+</div>
+
+{% endblock %}

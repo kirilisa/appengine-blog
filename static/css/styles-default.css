@@ -1,0 +1,322 @@
+html {
+  height: 100%;
+}
+
+body {
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  font: 16px "Raleway", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+section, div {
+  box-sizing: border-box;
+}
+
+a {
+  color: #444;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #369;
+}
+
+/*** general organization ***/
+
+header {
+    background: #000 url(../img/kceb-wht-128.png) no-repeat;
+    background-size: contain;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+main {
+  border-top: 1px solid #fff;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+footer {
+  align-items: center;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  color: #ccc;
+  display: flex;
+  font-size: 0.85em;
+  height: 40px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/*** navigation ***/
+
+nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  height: 40px;
+  width: 400px;
+}
+
+nav a {
+    color: #369;
+    font-size: .85em;
+    margin: 0.7em 0.4em;
+    padding: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    /*width: 6em;*/
+    border: 0px solid blue;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+
+/*** content ***/
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.errortext {
+    color:#f00;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+.item-title {
+  font: 100 1.2em "Fredericka the Great", sans-serif;
+  margin: 5px 0;
+  text-shadow: 0 0 3px #888;
+  text-transform: uppercase;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: .9em;
+    margin: 0 0 10px 5px;
+}
+
+.item-author {    
+    text-align: left;
+    width:100%;
+}
+
+.item-like-count {
+    padding: 0 10px 0 0;
+    margin-top: 5px;
+}
+
+.item-comment-count {
+    flex: 1;
+    margin-top: 5px;
+}
+
+
+.item-comments {
+    border-top: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+
+.item-comment {
+    margin: 10px 5px;
+    padding: 7px;
+    background: #eee;
+    border-radius: 3px;
+}
+
+.item-comment-author {
+    font-size: .9em;
+}
+
+.item-comment-author span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.item-comment-body {
+    padding: 5px 0;
+}
+
+.item-comment-edit {
+    width: 100%;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+.item-comment-edit input[type=submit] {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+
+.item-comment-edit input[type=submit]:hover {
+    background-color: #ebebeb;
+    border-color: #adadad;
+    color: #333;
+}
+
+.item-body {
+    /*white-space: pre-wrap;*/
+}
+
+.registerform, .loginform, .articleform, .commentform {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.commentform {
+    padding: 0 10px;
+}
+
+/*** for editing/deleting articles ***/
+.item-edit {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.edit-frm input[type=submit] {
+    font-size:24px;
+    padding:10px;
+}
+
+.edit-frm .button, .edit-frm input[type=submit] {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 25px 10px 25px;
+    font-weight:200;
+}
+
+.edit-frm input[type=submit]:hover, .edit-frm .button:hover {
+    background-color: #ebebeb;
+    border-color: #adadad;
+    color: #333;
+}
+
+
+/*** form based on "bootstrap style" from https://www.sanwebe.com/ ***/
+
+.bootstrap-frm {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #888;
+  font: 16px "Raleway", sans-serif;
+  margin: 0 auto;
+  padding: 20px 30px 20px 30px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.bootstrap-frm h1 {
+    border-bottom: 1px solid #DADADA;
+    color: #888;
+    display: block;
+    font: 25px "Raleway", sans-serif;
+    margin: -10px -30px 30px -30px;
+    padding: 0 0 10px 40px;
+}
+
+.bootstrap-frm label {
+    display: block;
+    margin: 0 0 5px;
+}
+
+.bootstrap-frm label>span {
+    color: #333;
+    float: left;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-right: 10px;
+    text-align: right;
+    width: 15%;
+}
+
+.bootstrap-frm input[type="text"], .bootstrap-frm input[type="password"], .bootstrap-frm input[type="email"], .bootstrap-frm textarea, .bootstrap-frm select{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-sizing:content-box;
+    color: #888;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    margin: 2px 6px 10px 0;
+    outline: 0 none;
+    padding: 5px 0 5px 5px;
+    width: 100%;
+}
+
+.bootstrap-frm textarea {
+    height: 100px;
+    padding: 5px 0 0 5px;
+    width: 100%;
+}
+
+.articleform .bootstrap-frm textarea {
+    height: 500px;
+}
+
+.bootstrap-frm input[type=submit] {
+    font-size:24px;
+    padding:10px;
+}
+
+.bootstrap-frm .button, .bootstrap-frm input[type=submit] {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 25px 10px 25px;
+}
+
+.bootstrap-frm input[type=submit]:hover, .bootstrap-frm .button:hover {
+    background-color: #ebebeb;
+    border-color: #adadad;
+    color: #333;
+}
+
+
+/*** footer ***/
+
+footer a {
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  width: 10em;
+} 

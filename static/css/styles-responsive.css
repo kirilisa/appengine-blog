@@ -1,0 +1,78 @@
+@media screen and (min-width:480px) {
+    nav a {
+	font-size: .9em;
+	margin: 0.7em 0.7em;
+    }
+    .item-edit {
+	text-align: right;
+    }
+    nav, .content {
+        width: 480px;
+    }
+}
+
+@media screen and (min-width:600px) {
+    nav a {
+	font-size: .95em;
+	margin: 0.7em 1em;
+    }
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    nav, .content {
+        width: 680px;
+    }
+    nav a {
+	font-size: 1em;
+	margin: 0.7em 1.2em;
+    }
+    .item-author {    
+	text-align: left;
+	width: 70%;
+    }
+    .item-like-count {
+        flex: 1;
+	text-align: right;
+	margin-top: 0;
+    }
+    .item-comment-count {
+	margin-top: 0;
+    }
+    .logo {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    nav, .content {
+        width: 800px;
+    }
+    .item-title {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    nav, .content {
+        width: 800px;
+    }
+    .registerform, .loginform, .articleform {
+        margin-bottom: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    nav, .content {
+	width:960px;
+    }
+    .item-title {
+        font-size: 1.8em;
+    }
+}
+

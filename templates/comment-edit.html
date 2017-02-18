@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="pagetitle">
+  <h1>Edit comment</h1>
+</div>
+
+<div class="articleform">
+  <span class="errortext">{{error}}</span>
+  <form class="edit-frm bootstrap-frm" action="/update-comment" method="post">
+    <input type="hidden" name="commentkey" value="{{commentkey}}">
+    <input type="hidden" name="articlekey" value="{{articlekey}}">
+    
+    <label for="content">Content</label>
+    <textarea name="content">{{content}}</textarea><br>
+
+    <a class="button" href="/blog/{{articlekey}}">Cancel</a>
+    <input type="submit" name="action" value="Update">
+  </form>
+</div>
+
+{% endblock %}

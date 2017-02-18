@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- display the basic article info & content -->
+<div class="item">
+  <div class="item-title">{{article.subject}}</div>
+  <div class="item-details">
+    <div class="item-author">
+      <a href="/blog/{{article.author.username}}">{{article.author.username}}</a> posted this on {{article.created.strftime('%-d %B, %Y %I:%M%p')}}
+    </div>
+    <div class="item-like-count">{{article.numlikes}} likes</div>
+    <div class="item-comment-count">{{article.numcomments}} comments</div>
+  </div>
+  <div class="item-body">
+    {{article.tidy_content() | safe}}
+  </div>
+</div>
+
+<!-- display the form for Edit, Delete and Like/Unlike -->
+{% if user %}
+<div class="item-edit">
+  <form class="edit-frm" action="/edit-article" method="post">
+    <input type="hidden" name="articlekey" value="{{article.key.id()}}">
+    {% if article.author.key == user.key %}
+    <input type="submit" name="action" value="Delete">
+    <input type="submit" name="action" value="Edit">
+    {% elif article.author.key != user.key %}
+    {% if user.key in article.likekeys %}
+    <input type="submit" name="action" value="Unlike">
+    {% else %}
+    <input type="submit" name="action" value="Like">
+    {% endif %}
+    {% endif %}    
+  </form>
+</div>
+{% endif %}
+
+<!-- display any comments on this article -->
+<div class="item-comments">
+<h3>Comments</h3>
+{% if article.comments.count() > 0 %}  
+{% for comment in article.comments %}
+<div class="item-comment">
+  <div class="item-comment-author"><span>{{comment.name}}</span> on {{comment.created.strftime('%-d %B, %Y %I:%M%p')}}</div>
+  <div class="item-comment-body">
+    {{comment.tidy_content() | safe}}
+  </div>
+
+  <!-- edit/delete for comments. Ideally this would be done via JS 
+    but I am too bloody tired at the moment to implement it -->
+  {% if user and comment.authorkey == user.key %}
+  <div class="item-comment-edit">
+    <form class="edit-comment-frm" action="/edit-comment" method="post">
+      <input type="hidden" name="commentkey" value="{{comment.key.id()}}">
+      <input type="hidden" name="articlekey" value="{{article.key.id()}}">
+      <input type="submit" name="action" value="Delete">
+      <input type="submit" name="action" value="Edit">
+    </form>
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% else %}
+<p><i>There are no comments for this article.</i></p>
+{% endif %}
+</div>
+
+<!-- display the form to make new comments -->
+{% if user %}
+<div class="commentform">
+  <h3>Comment on this article</h3>
+  <form class="bootstrap-frm" action="/new-comment" method="post">
+    <input type="hidden" name="author" value="{{user.key.id()}}">
+    <input type="hidden" name="article" value="{{article.key.id()}}">
+    
+    <label for="content">{{user.username}} wants to say...</label>
+    <textarea name="content">{{content}}</textarea><br>
+
+    <input type="submit" value="Comment">
+  </form>
+</div>
+{% endif %}
+
+{% endblock %}

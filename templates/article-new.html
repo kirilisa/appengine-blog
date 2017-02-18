@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="pagetitle">
+  <h1>Submit a new article</h1>
+</div>
+
+<div class="articleform">
+  <span class="errortext">{{error}}</span>
+  <form class="bootstrap-frm" action="/new-article" method="post">
+    <input type="hidden" name="author" value="{{user.key.id()}}">
+
+    <label for="subject">Title</label>  
+    <input type="text" name="subject" value="{{subject}}"><br>
+    
+    <label for="content">Content</label>
+    <textarea name="content">{{content}}</textarea><br>
+
+    <input type="submit">
+  </form>
+</div>
+
+{% endblock %}
