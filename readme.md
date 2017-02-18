@@ -4,13 +4,17 @@ This project realizes a simple blogging platform. You can register for the site,
 
 The public link to this project is at [https://udacity-cloud-155921.appspot.com/](https://udacity-cloud-155921.appspot.com/).
 
+## Dependancies
+
+This project was written using Google App Engine and Python 2.7.10 and uses Jinja as a templating engine. 
+
 ## Local Installation
 - Install [Python 2.7](https://www.python.org/)
 - Install and initialize [Google Cloud SDK](https://cloud.google.com/sdk/docs/)
 - Clone the project off of github and go to that directory
 ```
 git clone git@github.com:kirilisa/appengine-blog.git
-cd appengine-guestbook-python
+cd appengine-blog
 ```
 - Start the local development server on port 8080
 ```
@@ -22,9 +26,6 @@ dev_appserver.py ./
 
 
 
-## Dependancies
-
-This project was written using Google App Engine and Python 2.7.10 and uses Jinja as a templating engine. 
 
 ## Contribute
 

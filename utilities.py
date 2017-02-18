@@ -4,8 +4,9 @@ import random
 import re
 import string
 
-# TODO put this somewhere else in real life!
-SECRET = "bw)^eujg$#yp53456*(&u^ew4211=s9h%ckk5!e7ol3-)g4gi1"
+# get the secret key
+f = open("secret.txt", "r")
+SECRET = f.read()
 
 # hash a string with a secret key so it is unreadable
 def hash_str(s):
