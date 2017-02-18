@@ -2,11 +2,15 @@
 
 This project realizes a simple blogging platform. You can register for the site, log in, and thereafter create posts that are viewable to the public. You may edit or delete your own posts, comment on anyone's posts (including your own), and like or unlike posts that are not owned by yourself.
 
-The public link to this project is at [https://udacity-cloud-155921.appspot.com/](https://udacity-cloud-155921.appspot.com/).
+This project is implemented live at [https://udacity-cloud-155921.appspot.com/](https://udacity-cloud-155921.appspot.com/).
+
+The repository for this project is at [GitHub](https://github.com/kirilisa/appengine-blog).
+
 
 ## Dependancies
 
 This project was written using Google App Engine and Python 2.7.10 and uses Jinja as a templating engine. 
+
 
 ## Local Installation
 - Install [Python 2.7](https://www.python.org/)
@@ -21,10 +25,6 @@ cd appengine-blog
 dev_appserver.py ./
 ```
 - You can now see the local version at [http://localhost:8080/](http://localhost:8080/)
-
-
-
-
 
 
 ## Contribute

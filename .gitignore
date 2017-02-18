@@ -89,5 +89,5 @@ ENV/
 .ropeproject
 
 
-# all text files
-.txt
+# secret key
+secret.txt
