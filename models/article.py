@@ -1,8 +1,7 @@
 from google.appengine.ext import ndb
 
-from comment import Comment
-from user import User
-
+from models.comment import Comment
+from models.user import User
 
 class Article(ndb.Model):
     """ Represents an article in the datastore
@@ -19,7 +18,7 @@ class Article(ndb.Model):
     likekeys = ndb.KeyProperty(kind='User', repeated=True)
     subject = ndb.StringProperty(required=True)
     content = ndb.TextProperty(required=True)
-    created = ndb.DateTimeProperty(auto_now_add=True)
+    created = ndb.DateTimeProperty(auto_now_add=True,indexed=True)
 
     @classmethod
     def fetch(cls, articleid=None, limit=10):

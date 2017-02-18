@@ -5,9 +5,9 @@ import webapp2
 
 from google.appengine.ext import ndb
 
-from article import Article
-from comment import Comment
-from user import User
+from models.article import Article
+from models.comment import Comment
+from models.user import User
 import utilities
 
 # set up variables for the templating environment

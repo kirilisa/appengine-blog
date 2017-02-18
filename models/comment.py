@@ -16,7 +16,7 @@ class Comment(ndb.Model):
     articlekey = ndb.KeyProperty(kind='Article', required=True)
     name = ndb.StringProperty(required=True)
     content = ndb.TextProperty(required=True)
-    created = ndb.DateTimeProperty(auto_now_add=True)
+    created = ndb.DateTimeProperty(auto_now_add=True,indexed=True)
 
     @classmethod
     def fetch(cls, articleid, commentid=None):
