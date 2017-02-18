@@ -8,11 +8,14 @@ The public link to this project is at [https://udacity-cloud-155921.appspot.com/
 - Install [Python 2.7](https://www.python.org/)
 - Install and initialize [Google Cloud SDK](https://cloud.google.com/sdk/docs/)
 - Clone the project off of github and go to that directory
-```git clone git@github.com:kirilisa/appengine-blog.git
+```
+git clone git@github.com:kirilisa/appengine-blog.git
 cd appengine-guestbook-python
 ```
 - Start the local development server on port 8080
-```dev_appserver.py ./```
+```
+dev_appserver.py ./
+```
 - You can now see the local version at [http://localhost:8080/](http://localhost:8080/)
 
 
